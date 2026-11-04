@@ -1,0 +1,497 @@
+[
+  {
+    "id": "coding_python_rename_001",
+    "category": "coding_simple",
+    "task_type": "coding",
+    "question": "Buat script Python untuk rename banyak file di folder dengan opsi dry-run.",
+    "expected_keywords": ["pathlib", "argparse", "dry-run", "collision", "cara menjalankan", "test"],
+    "must_not_contain": ["if name == \"main\"", "overwrite tanpa cek"],
+    "rubric": "Jawaban harus memberi kode runnable, validasi folder, preview tanpa mengubah file, collision handling, cara menjalankan, dan cara test."
+  },
+  {
+    "id": "debug_python_typeerror_002",
+    "category": "debugging",
+    "task_type": "debugging",
+    "question": "Mengapa kode Python ini error: TypeError: unsupported operand type(s) for +: 'int' and 'str'?",
+    "expected_keywords": ["int", "str", "konversi", "penyebab", "verifikasi"],
+    "must_not_contain": ["install ulang"],
+    "rubric": "Jawaban harus menjelaskan penyebab tipe data berbeda, memberi contoh perbaikan konversi, dan cara cek."
+  },
+  {
+    "id": "python_list_tuple_003",
+    "category": "python",
+    "task_type": "concept",
+    "question": "Apa perbedaan list dan tuple di Python?",
+    "expected_keywords": ["mutable", "immutable", "list", "tuple", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus membedakan mutability, sintaks, penggunaan umum, dan memberi contoh singkat."
+  },
+  {
+    "id": "js_equality_004",
+    "category": "javascript",
+    "task_type": "concept",
+    "question": "Apa perbedaan == dan === di JavaScript?",
+    "expected_keywords": ["type coercion", "strict", "tipe", "nilai", "contoh"],
+    "must_not_contain": ["sama saja"],
+    "rubric": "Jawaban harus menjelaskan coercion pada == dan strict equality pada ===."
+  },
+  {
+    "id": "security_sql_injection_005",
+    "category": "security",
+    "task_type": "concept",
+    "question": "Bagaimana cara mencegah SQL injection?",
+    "expected_keywords": ["parameterized", "prepared", "validasi", "jangan concatenation", "least privilege"],
+    "must_not_contain": ["gabungkan string query langsung"],
+    "rubric": "Jawaban harus menyebut parameterized query/prepared statement, validasi input, dan prinsip keamanan dasar."
+  },
+  {
+    "id": "backend_401_403_006",
+    "category": "api_backend",
+    "task_type": "concept",
+    "question": "Apa perbedaan HTTP 401 dan 403?",
+    "expected_keywords": ["401", "403", "authentication", "authorization", "izin"],
+    "must_not_contain": ["sama"],
+    "rubric": "Jawaban harus membedakan belum login/kredensial tidak valid dengan sudah dikenali tetapi tidak punya izin."
+  },
+  {
+    "id": "auth_authz_007",
+    "category": "api_backend",
+    "task_type": "concept",
+    "question": "Apa perbedaan authentication dan authorization?",
+    "expected_keywords": ["authentication", "authorization", "identitas", "izin", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan siapa pengguna vs apa yang boleh dilakukan pengguna."
+  },
+  {
+    "id": "async_sync_008",
+    "category": "programming_concept",
+    "task_type": "concept",
+    "question": "Apa perbedaan synchronous dan asynchronous programming?",
+    "expected_keywords": ["blocking", "non-blocking", "event loop", "await", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus membedakan blocking dan non-blocking serta kapan async berguna."
+  },
+  {
+    "id": "race_condition_009",
+    "category": "programming_concept",
+    "task_type": "concept",
+    "question": "Apa itu race condition?",
+    "expected_keywords": ["bersamaan", "urutan eksekusi", "shared resource", "lock", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menyebut akses bersama dan hasil bergantung urutan eksekusi."
+  },
+  {
+    "id": "algorithm_bottleneck_010",
+    "category": "algorithm",
+    "task_type": "analysis",
+    "question": "Jika sebuah fungsi lambat, bagaimana cara menganalisis bottleneck?",
+    "expected_keywords": ["profiling", "ukur", "kompleksitas", "I/O", "baseline", "optimasi"],
+    "must_not_contain": ["langsung rewrite semua"],
+    "rubric": "Jawaban harus menyarankan ukur dulu, profiling, identifikasi bagian lambat, baru optimasi terukur."
+  },
+  {
+    "id": "algorithm_big_o_011",
+    "category": "algorithm",
+    "task_type": "concept",
+    "question": "Jelaskan Big O dengan contoh sederhana.",
+    "expected_keywords": ["kompleksitas", "O(n)", "O(1)", "pertumbuhan", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan Big O sebagai pertumbuhan biaya terhadap ukuran input."
+  },
+  {
+    "id": "sql_index_012",
+    "category": "sql",
+    "task_type": "concept",
+    "question": "Kapan index database membantu dan kapan bisa merugikan?",
+    "expected_keywords": ["query", "read", "write", "storage", "kolom", "selectivity"],
+    "must_not_contain": ["selalu mempercepat semua"],
+    "rubric": "Jawaban harus seimbang: index membantu pencarian tetapi menambah storage dan biaya write."
+  },
+  {
+    "id": "frontend_accessibility_013",
+    "category": "frontend",
+    "task_type": "concept",
+    "question": "Apa yang perlu diperhatikan agar form web lebih accessible?",
+    "expected_keywords": ["label", "keyboard", "aria", "kontras", "error message"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menyebut label jelas, navigasi keyboard, kontras, dan pesan error."
+  },
+  {
+    "id": "frontend_state_014",
+    "category": "frontend",
+    "task_type": "concept",
+    "question": "Apa perbedaan state lokal komponen dan state global?",
+    "expected_keywords": ["komponen", "global", "shared", "scope", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus membedakan cakupan data dan kapan memakai masing-masing."
+  },
+  {
+    "id": "ml_feature_015",
+    "category": "machine_learning",
+    "task_type": "concept",
+    "question": "Apa yang dimaksud dengan feature dalam machine learning? Berikan contoh feature dalam kasus prediksi harga rumah.",
+    "expected_keywords": ["input", "atribut", "variabel", "harga rumah", "luas", "jumlah kamar", "lokasi"],
+    "must_not_contain": ["tidak bisa menemukan hasil", "web search gagal"],
+    "rubric": "Jawaban harus mendefinisikan feature sebagai input model dan memberi contoh konkret harga rumah."
+  },
+  {
+    "id": "ml_accuracy_016",
+    "category": "machine_learning",
+    "task_type": "trick",
+    "question": "Jika accuracy model 99%, apakah pasti model itu bagus?",
+    "expected_keywords": ["belum tentu", "imbalance", "precision", "recall", "confusion matrix", "baseline"],
+    "must_not_contain": ["pasti bagus"],
+    "rubric": "Jawaban harus mengenali jebakan accuracy tinggi dan menyebut metric lain serta data imbalance."
+  },
+  {
+    "id": "ml_precision_recall_017",
+    "category": "machine_learning",
+    "task_type": "concept",
+    "question": "Apa perbedaan precision dan recall?",
+    "expected_keywords": ["precision", "recall", "false positive", "false negative", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus membedakan fokus precision dan recall dengan contoh."
+  },
+  {
+    "id": "ml_data_leakage_018",
+    "category": "machine_learning",
+    "task_type": "concept",
+    "question": "Apa itu data leakage?",
+    "expected_keywords": ["informasi masa depan", "train", "test", "validasi", "terlalu optimis"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan kebocoran informasi dari test/masa depan ke training."
+  },
+  {
+    "id": "data_correlation_019",
+    "category": "data_analysis",
+    "task_type": "trick",
+    "question": "Jika dua variabel berkorelasi tinggi, apakah salah satunya pasti menyebabkan yang lain?",
+    "expected_keywords": ["tidak pasti", "correlation", "causation", "confounder", "eksperimen"],
+    "must_not_contain": ["pasti menyebabkan"],
+    "rubric": "Jawaban harus membedakan korelasi dan sebab-akibat serta menyebut variabel perancu."
+  },
+  {
+    "id": "data_missing_values_020",
+    "category": "data_analysis",
+    "task_type": "analysis",
+    "question": "Bagaimana menangani missing values dalam dataset?",
+    "expected_keywords": ["analisis pola", "hapus", "imputasi", "median", "domain", "validasi"],
+    "must_not_contain": ["hapus semua tanpa cek"],
+    "rubric": "Jawaban harus menyarankan analisis pola missing, pilihan imputasi/hapus, dan validasi dampak."
+  },
+  {
+    "id": "math_ratio_consistency_021",
+    "category": "mathematics",
+    "task_type": "math",
+    "question": "A:B = 3:5. A bertambah 60.000, B berkurang 20.000. Rasio akhir 2:3 dan total akhir 640.000. Tentukan nilai awal A dan B.",
+    "expected_keywords": ["3x", "5x", "rasio akhir", "total akhir", "tidak konsisten", "tidak ada solusi"],
+    "must_not_contain": ["memaksakan"],
+    "rubric": "Jawaban harus membentuk persamaan rasio akhir dan total akhir, lalu mengecek kontradiksi jika x berbeda."
+  },
+  {
+    "id": "math_division_zero_022",
+    "category": "mathematics",
+    "task_type": "math",
+    "question": "Selesaikan (x^2 - 9)/(x - 3) = 6.",
+    "expected_keywords": ["x tidak sama dengan 3", "faktorkan", "x = 3", "tidak valid", "tidak ada solusi"],
+    "must_not_contain": ["x = 3 adalah solusi"],
+    "rubric": "Jawaban harus membatalkan faktor dengan syarat x != 3 dan menolak solusi yang membuat penyebut nol."
+  },
+  {
+    "id": "math_units_023",
+    "category": "mathematics",
+    "task_type": "math",
+    "question": "Benda bermassa 2 kg diberi gaya 10 N selama 4 detik dari keadaan diam. Berapa kecepatannya?",
+    "expected_keywords": ["F = m", "percepatan", "5 m/s^2", "v = a", "20 m/s"],
+    "must_not_contain": ["5 m/s sebagai kecepatan akhir"],
+    "rubric": "Jawaban harus membedakan percepatan dan kecepatan serta memakai v = a t."
+  },
+  {
+    "id": "logic_all_some_024",
+    "category": "logic",
+    "task_type": "trick",
+    "question": "Semua A adalah B. Beberapa B adalah C. Apakah pasti beberapa A adalah C?",
+    "expected_keywords": ["tidak pasti", "belum tentu", "diagram", "premis"],
+    "must_not_contain": ["pasti"],
+    "rubric": "Jawaban harus mengenali bahwa relasi beberapa B dan C tidak harus mengenai A."
+  },
+  {
+    "id": "ambiguous_better_025",
+    "category": "ambiguous",
+    "task_type": "ambiguous",
+    "question": "Mana yang lebih baik?",
+    "expected_keywords": ["tergantung", "konteks", "pilihan", "kriteria", "klarifikasi"],
+    "must_not_contain": ["pasti yang pertama"],
+    "rubric": "Jawaban harus menyebut pertanyaan ambigu dan meminta konteks/kriteria."
+  },
+  {
+    "id": "false_premise_026",
+    "category": "false_premise",
+    "task_type": "trick",
+    "question": "Mengapa semua bahasa pemrograman selalu lebih cepat dari Python?",
+    "expected_keywords": ["premis", "tidak benar", "tergantung", "implementasi", "use case"],
+    "must_not_contain": ["karena semua bahasa"],
+    "rubric": "Jawaban harus menolak premis salah dan menjelaskan konteks performa."
+  },
+  {
+    "id": "uncertainty_latest_027",
+    "category": "uncertainty",
+    "task_type": "fact",
+    "question": "Siapa menteri keuangan Indonesia saat ini?",
+    "expected_keywords": ["saat ini", "sumber", "bisa berubah", "cek"],
+    "must_not_contain": ["joko widodo menjabat hingga 2026"],
+    "rubric": "Jawaban harus sadar data bisa berubah dan memakai sumber terbaru bila tersedia."
+  },
+  {
+    "id": "short_answer_028",
+    "category": "short_answer",
+    "task_type": "fact",
+    "question": "Jawab singkat: kapan Indonesia merdeka?",
+    "expected_keywords": ["17 Agustus 1945"],
+    "must_not_contain": ["paragraf panjang"],
+    "rubric": "Jawaban harus singkat dan langsung menyebut tanggal."
+  },
+  {
+    "id": "detailed_answer_029",
+    "category": "detailed_answer",
+    "task_type": "concept",
+    "question": "Jelaskan langkah debugging ketika aplikasi Flask tidak berjalan.",
+    "expected_keywords": ["error message", "environment", "port", "dependency", "route", "log", "verifikasi"],
+    "must_not_contain": ["install ulang laptop"],
+    "rubric": "Jawaban harus bertahap dari error, environment, dependency, port, route, log, hingga verifikasi."
+  },
+  {
+    "id": "comparison_api_rest_graphql_030",
+    "category": "comparison",
+    "task_type": "concept",
+    "question": "Bandingkan REST API dan GraphQL.",
+    "expected_keywords": ["REST", "GraphQL", "endpoint", "query", "overfetching", "trade-off"],
+    "must_not_contain": ["selalu lebih baik"],
+    "rubric": "Jawaban harus membandingkan model endpoint vs query fleksibel serta trade-off."
+  },
+  {
+    "id": "python_empty_input_031",
+    "category": "python",
+    "task_type": "coding",
+    "question": "Bagaimana menangani input kosong dari user di Python?",
+    "expected_keywords": ["strip", "validasi", "ValueError", "pesan error", "contoh kode"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus memberi contoh validasi input kosong dan pesan error."
+  },
+  {
+    "id": "security_hardcoded_password_032",
+    "category": "security",
+    "task_type": "concept",
+    "question": "Apa yang salah dari kode yang memakai password hardcoded?",
+    "expected_keywords": ["rahasia", "environment", "leak", "rotation", "repo"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan risiko bocor di repo/log dan menyarankan environment/secret manager."
+  },
+  {
+    "id": "api_rate_limit_033",
+    "category": "api_backend",
+    "task_type": "concept",
+    "question": "Mengapa API perlu rate limiting?",
+    "expected_keywords": ["abuse", "DoS", "resource", "quota", "stabil"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan pencegahan penyalahgunaan dan menjaga stabilitas layanan."
+  },
+  {
+    "id": "frontend_debounce_034",
+    "category": "frontend",
+    "task_type": "concept",
+    "question": "Apa itu debounce pada input pencarian?",
+    "expected_keywords": ["menunda", "typing", "request", "timer", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan penundaan eksekusi sampai user berhenti mengetik."
+  },
+  {
+    "id": "sql_transaction_035",
+    "category": "sql",
+    "task_type": "concept",
+    "question": "Untuk apa database transaction digunakan?",
+    "expected_keywords": ["atomic", "commit", "rollback", "konsistensi", "contoh"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menyebut semua operasi berhasil atau dibatalkan bersama."
+  },
+  {
+    "id": "debug_importerror_036",
+    "category": "debugging",
+    "task_type": "debugging",
+    "question": "Bagaimana men-debug ImportError: No module named requests?",
+    "expected_keywords": ["venv", "pip", "python -m pip", "environment", "verifikasi"],
+    "must_not_contain": ["hapus project"],
+    "rubric": "Jawaban harus cek virtualenv/interpreter dan install dependency di environment yang benar."
+  },
+  {
+    "id": "coding_cli_app_037",
+    "category": "coding_simple",
+    "task_type": "coding",
+    "question": "Buat contoh CLI Python sederhana untuk mencatat task ke file JSON.",
+    "expected_keywords": ["argparse", "json", "pathlib", "add", "list", "cara menjalankan"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus memberi kode CLI runnable dengan subcommand tambah/list dan storage JSON."
+  },
+  {
+    "id": "algorithm_binary_search_038",
+    "category": "algorithm",
+    "task_type": "coding",
+    "question": "Tulis binary search di Python dan jelaskan syarat inputnya.",
+    "expected_keywords": ["sorted", "low", "high", "mid", "O(log n)", "kode"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus memberi kode benar dan menyebut array harus terurut."
+  },
+  {
+    "id": "math_percentage_039",
+    "category": "mathematics",
+    "task_type": "math",
+    "question": "Harga naik 20% lalu turun 20%. Apakah kembali ke harga awal?",
+    "expected_keywords": ["tidak", "1.2", "0.8", "96%", "turun 4%"],
+    "must_not_contain": ["kembali sama"],
+    "rubric": "Jawaban harus mengenali persentase berurutan tidak saling meniadakan."
+  },
+  {
+    "id": "logic_average_040",
+    "category": "logic",
+    "task_type": "trick",
+    "question": "Rata-rata 5 angka adalah 10. Jika satu angka 100, apakah mungkin?",
+    "expected_keywords": ["mungkin", "jumlah total 50", "angka lain", "negatif"],
+    "must_not_contain": ["tidak mungkin karena 100 besar"],
+    "rubric": "Jawaban harus mengecek jumlah total dan kemungkinan angka lain negatif jika tidak dibatasi."
+  },
+  {
+    "id": "writing_summary_041",
+    "category": "writing",
+    "task_type": "writing",
+    "question": "Ringkas teks panjang menjadi 3 poin utama.",
+    "expected_keywords": ["poin", "utama", "ringkas", "data teks"],
+    "must_not_contain": ["mengarang isi teks"],
+    "rubric": "Jawaban harus meminta teks jika belum diberikan dan tidak mengarang isi."
+  },
+  {
+    "id": "writing_tone_042",
+    "category": "writing",
+    "task_type": "writing",
+    "question": "Perbaiki kalimat ini agar lebih profesional: gua mau izin ga masuk.",
+    "expected_keywords": ["Saya", "izin", "tidak masuk", "alasan", "profesional"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus memberi versi kalimat sopan dan profesional."
+  },
+  {
+    "id": "coding_flask_route_043",
+    "category": "api_backend",
+    "task_type": "coding",
+    "question": "Buat route Flask POST /items yang menerima JSON dan menolak input kosong.",
+    "expected_keywords": ["@app.post", "request.get_json", "validasi", "400", "jsonify", "cara test"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus memberi route runnable, validasi JSON, response 400, dan cara test."
+  },
+  {
+    "id": "debug_js_undefined_044",
+    "category": "debugging",
+    "task_type": "debugging",
+    "question": "Mengapa JavaScript error Cannot read properties of undefined?",
+    "expected_keywords": ["undefined", "property", "cek null", "optional chaining", "verifikasi"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan objek belum ada dan cara guard."
+  },
+  {
+    "id": "security_file_upload_045",
+    "category": "security",
+    "task_type": "concept",
+    "question": "Apa risiko fitur upload file dan bagaimana mitigasinya?",
+    "expected_keywords": ["validasi ekstensi", "ukuran file", "path traversal", "scan", "storage"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menyebut validasi tipe/ukuran, nama file aman, storage terpisah, dan scanning bila perlu."
+  },
+  {
+    "id": "ml_train_test_split_046",
+    "category": "machine_learning",
+    "task_type": "concept",
+    "question": "Mengapa data training dan testing harus dipisah?",
+    "expected_keywords": ["generalisasi", "unseen data", "overfitting", "evaluasi", "leakage"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus menjelaskan evaluasi pada data yang belum dilihat dan mencegah data leakage."
+  },
+  {
+    "id": "data_outlier_047",
+    "category": "data_analysis",
+    "task_type": "analysis",
+    "question": "Bagaimana cara menangani outlier dalam data?",
+    "expected_keywords": ["deteksi", "domain", "hapus", "winsorize", "robust", "validasi"],
+    "must_not_contain": ["hapus semua outlier otomatis"],
+    "rubric": "Jawaban harus menyebut cek konteks domain dan dampak sebelum menghapus/mengubah."
+  },
+  {
+    "id": "ambiguous_install_048",
+    "category": "ambiguous",
+    "task_type": "ambiguous",
+    "question": "Install ini gimana?",
+    "expected_keywords": ["butuh konteks", "apa yang diinstall", "OS", "langkah umum"],
+    "must_not_contain": ["jalankan perintah acak"],
+    "rubric": "Jawaban harus meminta nama aplikasi/package dan OS, lalu memberi langkah umum aman."
+  },
+  {
+    "id": "fact_no_source_049",
+    "category": "uncertainty",
+    "task_type": "fact",
+    "question": "Berapa harga RTX 3050 hari ini?",
+    "expected_keywords": ["harga berubah", "sumber terbaru", "cek marketplace", "tidak pasti"],
+    "must_not_contain": ["pasti Rp"],
+    "rubric": "Jawaban harus menyatakan harga berubah dan butuh sumber terbaru."
+  },
+  {
+    "id": "comparison_sql_nosql_050",
+    "category": "comparison",
+    "task_type": "concept",
+    "question": "Bandingkan SQL dan NoSQL untuk aplikasi kecil.",
+    "expected_keywords": ["relasional", "schema", "query", "fleksibel", "trade-off", "SQLite"],
+    "must_not_contain": ["NoSQL selalu lebih modern"],
+    "rubric": "Jawaban harus memberi trade-off dan rekomendasi pragmatis untuk aplikasi kecil."
+  },
+  {
+    "id": "debug_port_051",
+    "category": "debugging",
+    "task_type": "debugging",
+    "question": "Flask error Address already in use. Apa yang harus dicek?",
+    "expected_keywords": ["port", "process", "5000", "ubah port", "kill", "verifikasi"],
+    "must_not_contain": ["install ulang Flask"],
+    "rubric": "Jawaban harus menjelaskan port sedang dipakai dan memberi opsi tutup proses atau ubah port."
+  },
+  {
+    "id": "coding_project_structure_052",
+    "category": "coding_project",
+    "task_type": "coding",
+    "question": "Buat struktur project Flask kecil dengan SQLite untuk aplikasi catatan.",
+    "expected_keywords": ["app.py", "templates", "static", "database", "requirements", "cara menjalankan"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus memberi struktur folder, file utama, dependency, route dasar, dan cara menjalankan."
+  },
+  {
+    "id": "math_assumption_053",
+    "category": "mathematics",
+    "task_type": "math",
+    "question": "Sebuah mobil menempuh 100 km. Berapa kecepatannya?",
+    "expected_keywords": ["data kurang", "waktu", "kecepatan", "jarak per waktu"],
+    "must_not_contain": ["100 km/jam pasti"],
+    "rubric": "Jawaban harus menyatakan waktu belum diberikan sehingga kecepatan tidak bisa ditentukan."
+  },
+  {
+    "id": "concept_edge_case_054",
+    "category": "programming_concept",
+    "task_type": "concept",
+    "question": "Apa yang dimaksud dengan edge case?",
+    "expected_keywords": ["kasus batas", "jarang", "input kosong", "nilai ekstrem", "test"],
+    "must_not_contain": [],
+    "rubric": "Jawaban harus mendefinisikan edge case dan memberi contoh input kosong/nilai ekstrem."
+  },
+  {
+    "id": "debug_dependency_guess_055",
+    "category": "debugging",
+    "task_type": "debugging",
+    "question": "Aplikasi tidak berjalan, tapi saya belum memberi error message. Apa langkah terbaik?",
+    "expected_keywords": ["minta error", "log", "langkah reproduksi", "environment", "jangan menebak"],
+    "must_not_contain": ["langsung install ulang"],
+    "rubric": "Jawaban harus tidak menebak dan meminta error/log serta langkah reproduksi."
+  }
+]

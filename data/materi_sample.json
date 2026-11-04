@@ -1,0 +1,44 @@
+[
+  {
+    "subject": "matematika",
+    "topic": "persamaan linear",
+    "keywords": ["persamaan", "linear", "x", "aljabar"],
+    "content": "Persamaan linear satu variabel diselesaikan dengan menjaga kedua ruas tetap seimbang. Pindahkan konstanta dan bagi dengan koefisien variabel."
+  },
+  {
+    "subject": "fisika",
+    "topic": "hukum Newton",
+    "keywords": ["gaya", "massa", "percepatan", "newton"],
+    "content": "Hukum II Newton menyatakan resultan gaya sama dengan massa dikali percepatan: F = m a."
+  },
+  {
+    "subject": "kimia",
+    "topic": "mol",
+    "keywords": ["mol", "massa", "mr", "stoikiometri"],
+    "content": "Jumlah mol dapat dihitung dengan rumus n = massa / Mr. Rumus ini sering dipakai dalam stoikiometri dasar."
+  },
+  {
+    "subject": "bahasa_inggris",
+    "topic": "subject-verb agreement",
+    "keywords": ["grammar", "verb", "subject", "sentence"],
+    "content": "Dalam simple present, subject tunggal orang ketiga seperti he, she, dan it memakai verb dengan akhiran -s atau -es."
+  },
+  {
+    "subject": "toefl",
+    "topic": "TOEFL structure",
+    "keywords": ["toefl", "structure", "written expression", "agreement"],
+    "content": "Pada TOEFL Structure, cari subject utama sebelum memilih verb. Frasa sisipan seperti along with tidak mengubah jumlah subject utama."
+  },
+  {
+    "subject": "sejarah",
+    "topic": "proklamasi Indonesia",
+    "keywords": ["proklamasi", "kemerdekaan", "indonesia", "soekarno"],
+    "content": "Proklamasi Kemerdekaan Indonesia dibacakan pada 17 Agustus 1945 oleh Soekarno, didampingi Mohammad Hatta."
+  },
+  {
+    "subject": "pendidikan",
+    "topic": "pedagogik dasar",
+    "keywords": ["pedagogik", "pembelajaran", "peserta didik", "guru"],
+    "content": "Pedagogik dasar membahas cara guru merancang, melaksanakan, dan mengevaluasi pembelajaran sesuai kebutuhan peserta didik."
+  }
+]

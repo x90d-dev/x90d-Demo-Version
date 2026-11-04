@@ -1,0 +1,196 @@
+[
+  {
+    "id": "math-1",
+    "subject": "matematika",
+    "topic": "persamaan linear",
+    "level": 1,
+    "question_type": "calculation",
+    "question": "Selesaikan persamaan 2x + 3 = 11.",
+    "choices": null,
+    "answer": "4",
+    "explanation": "2x + 3 = 11, maka 2x = 8 dan x = 4."
+  },
+  {
+    "id": "math-2",
+    "subject": "matematika",
+    "topic": "persamaan linear",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "Jika 5x = 20, nilai x adalah ...",
+    "choices": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "C",
+    "explanation": "x = 20/5 = 4."
+  },
+  {
+    "id": "physics-1",
+    "subject": "fisika",
+    "topic": "hukum Newton",
+    "level": 1,
+    "question_type": "calculation",
+    "question": "Sebuah benda bermassa 2 kg diberi gaya 10 N. Berapa percepatannya?",
+    "choices": null,
+    "answer": "5",
+    "explanation": "Gunakan F = m a, maka a = F/m = 10/2 = 5 m/s^2."
+  },
+  {
+    "id": "physics-2",
+    "subject": "fisika",
+    "topic": "hukum Newton",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "Hukum II Newton menyatakan hubungan antara ...",
+    "choices": {
+      "A": "gaya, massa, dan percepatan",
+      "B": "massa, suhu, dan kalor",
+      "C": "tekanan, volume, dan suhu",
+      "D": "arus, tegangan, dan hambatan"
+    },
+    "answer": "A",
+    "explanation": "Hukum II Newton dirumuskan F = m a."
+  },
+  {
+    "id": "chem-1",
+    "subject": "kimia",
+    "topic": "mol",
+    "level": 1,
+    "question_type": "calculation",
+    "question": "Berapa mol NaCl dalam 58,5 gram NaCl? Ar Na = 23 dan Cl = 35,5.",
+    "choices": null,
+    "answer": "1",
+    "explanation": "Mr NaCl = 58,5. Mol = massa/Mr = 58,5/58,5 = 1 mol."
+  },
+  {
+    "id": "chem-2",
+    "subject": "kimia",
+    "topic": "asam basa",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "Larutan dengan pH 3 bersifat ...",
+    "choices": {
+      "A": "asam",
+      "B": "basa",
+      "C": "netral",
+      "D": "garam"
+    },
+    "answer": "A",
+    "explanation": "pH kurang dari 7 menunjukkan sifat asam."
+  },
+  {
+    "id": "eng-1",
+    "subject": "bahasa_inggris",
+    "topic": "subject-verb agreement",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "Choose the correct verb: She ___ to school every day.",
+    "choices": {
+      "A": "go",
+      "B": "goes",
+      "C": "going",
+      "D": "gone"
+    },
+    "answer": "B",
+    "explanation": "Subject 'she' memakai verb+s dalam simple present."
+  },
+  {
+    "id": "eng-2",
+    "subject": "bahasa_inggris",
+    "topic": "vocabulary",
+    "level": 1,
+    "question_type": "essay",
+    "question": "What is a simple synonym of 'happy'?",
+    "choices": null,
+    "answer": "glad",
+    "explanation": "'Glad' adalah sinonim sederhana dari 'happy'."
+  },
+  {
+    "id": "hist-1",
+    "subject": "sejarah",
+    "topic": "proklamasi Indonesia",
+    "level": 1,
+    "question_type": "essay",
+    "question": "Kapan Indonesia memproklamasikan kemerdekaan?",
+    "choices": null,
+    "answer": "17 Agustus 1945",
+    "explanation": "Proklamasi Kemerdekaan Indonesia dibacakan pada 17 Agustus 1945."
+  },
+  {
+    "id": "hist-2",
+    "subject": "sejarah",
+    "topic": "proklamasi Indonesia",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "Tokoh yang membacakan teks proklamasi Indonesia adalah ...",
+    "choices": {
+      "A": "Soekarno",
+      "B": "Sutan Sjahrir",
+      "C": "Ki Hajar Dewantara",
+      "D": "Mohammad Yamin"
+    },
+    "answer": "A",
+    "explanation": "Teks proklamasi dibacakan oleh Soekarno didampingi Mohammad Hatta."
+  },
+  {
+    "id": "edu-1",
+    "subject": "pendidikan",
+    "topic": "pedagogik dasar",
+    "level": 1,
+    "question_type": "essay",
+    "question": "Apa inti pembelajaran berpusat pada peserta didik?",
+    "choices": null,
+    "answer": "peserta didik aktif",
+    "explanation": "Pembelajaran berpusat pada peserta didik menempatkan siswa sebagai pelaku aktif dalam belajar."
+  },
+  {
+    "id": "edu-2",
+    "subject": "pendidikan",
+    "topic": "evaluasi pembelajaran",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "Evaluasi formatif biasanya dilakukan untuk ...",
+    "choices": {
+      "A": "memantau proses belajar",
+      "B": "menentukan kelulusan akhir saja",
+      "C": "menghapus materi",
+      "D": "mengganti kurikulum"
+    },
+    "answer": "A",
+    "explanation": "Evaluasi formatif membantu guru melihat perkembangan belajar selama proses berlangsung."
+  },
+  {
+    "id": "toefl-1",
+    "subject": "toefl",
+    "topic": "TOEFL structure",
+    "level": 1,
+    "question_type": "multiple_choice",
+    "question": "TOEFL Structure: The teacher, along with her students, ___ in the classroom.",
+    "choices": {
+      "A": "is",
+      "B": "are",
+      "C": "be",
+      "D": "were"
+    },
+    "answer": "A",
+    "explanation": "Subject utama adalah 'The teacher' tunggal, sehingga verb yang benar adalah 'is'."
+  },
+  {
+    "id": "toefl-2",
+    "subject": "toefl",
+    "topic": "TOEFL reading",
+    "level": 1,
+    "question_type": "reading",
+    "question": "Reading: Plants need sunlight to make food. What do plants need to make food?",
+    "choices": {
+      "A": "sunlight",
+      "B": "stone",
+      "C": "metal",
+      "D": "plastic"
+    },
+    "answer": "A",
+    "explanation": "Kalimat menyebutkan plants need sunlight to make food."
+  }
+]
