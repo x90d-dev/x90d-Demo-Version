@@ -262,4 +262,4 @@ Didistribusikan di bawah lisensi MIT. Lihat file `LICENSE` untuk informasi selen
   <sub>Dibangun secara independen untuk mendukung ekosistem AI lokal yang privat, cepat, dan terjangkau.</sub>
 </div>
 
-## 📄 Download Database On : https://drive.google.com/drive/folders/1dg7cZ7OevMS7O0olti1X8zxkJVZyvtjP?usp=sharing
+## 📄 Download Database On : https://drive.google.com/file/d/1rK_vXoplxEjkkZGkJDou3h--hqm6-CQ0/view?usp=sharing
