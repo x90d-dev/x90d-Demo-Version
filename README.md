@@ -30,9 +30,9 @@
 
 ## 📌 Overview
 
-**CoreChiperAgent** adalah aplikasi web asisten AI tutor mandiri yang didesain untuk berjalan sepenuhnya di lingkungan lokal (`localhost`). Dibuat khusus untuk laptop dengan spesifikasi standar, CoreChiperAgent menawarkan bantuan penyelesaian masalah akademik, penjelasan konsep materi, latihan ujian (termasuk TOEFL), hingga debugging pemrograman tanpa mengirimkan data ke penyedia API komersial (seperti OpenAI atau ChatGPT).
+**x90d** adalah aplikasi web asisten AI tutor mandiri yang didesain untuk berjalan sepenuhnya di lingkungan lokal (`localhost`). Dibuat khusus untuk laptop dengan spesifikasi standar, CoreChiperAgent menawarkan bantuan penyelesaian masalah akademik, penjelasan konsep materi, latihan ujian (termasuk TOEFL), hingga debugging pemrograman tanpa mengirimkan data ke penyedia API komersial (seperti OpenAI atau ChatGPT).
 
-### Mengapa CoreChiperAgent?
+### Mengapa x90d?
 - **Data Privacy First:** Tidak ada data percakapan, file, atau dokumen yang dikirim ke server luar. Semua diproses lokal via Ollama.
 - **Resource Efficient:** Dioptimalkan secara ketat untuk laptop dengan RAM 8 GB–12 GB menggunakan model ringkas (3B parameter) tanpa menguras VRAM.
 - **No Vector DB Overhead:** Menggunakan pencarian berbasis *keyword context injection* dan SQLite murni tanpa dependensi vector database yang berat.
@@ -102,8 +102,8 @@ ollama pull moondream
 ### 2. Konfigurasi Environment Python
 Clone repositori dan buat isolasi environment:
 ```bash
-git clone https://github.com/username/CoreChiperAgent.git
-cd CoreChiperAgent
+git clone https://github.com/x90d-dev/x90d.git
+cd x90d-dev
 
 # Buat virtual environment
 python -m venv venv
@@ -173,7 +173,7 @@ Untuk performa ekstra cepat tanpa beban rendering browser, gunakan antarmuka bar
 
 ```text
                ┌───────────────────────┐
-               │    CoreChiperAgent    │
+               │        x90d           │
                └──────────┬────────────┘
                           │
      ┌────────────────────┼────────────────────┐
@@ -198,7 +198,7 @@ Untuk performa ekstra cepat tanpa beban rendering browser, gunakan antarmuka bar
 ## 📂 Project Architecture
 
 ```plaintext
-ai-tutor-lokal-ringan/
+AI/
 ├── app.py                     # Entry point Flask server & routing
 ├── cmd_chat.py                # Standalone CLI chat engine
 ├── requirements.txt           # Dependensi Python
