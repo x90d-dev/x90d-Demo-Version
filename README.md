@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="static/corechiperagent-logo.png" alt="CoreChiperAgent Logo" width="120" style="border-radius: 50%;">
+  <img src="static/corechiperagent-logo1.png" alt="CoreChiperAgent Logo" width="120" style="border-radius: 50%;">
 
-  # CoreChiperAgent
+  # x90d Demo Version
 
   **Private, Lightweight, and Local AI-Powered Learning Assistant**  
   *Powered by Flask, SQLite, and Ollama. Zero Paid APIs. 100% Local Inference.*
