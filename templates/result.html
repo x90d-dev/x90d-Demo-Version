@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card result-card">
+  <div class="meta-grid">
+    <div>
+      <span class="meta-label">Mata pelajaran</span>
+      <strong>{{ result.subject|replace("_", " ")|title }}</strong>
+    </div>
+    <div>
+      <span class="meta-label">Topik</span>
+      <strong>{{ result.topic|title }}</strong>
+    </div>
+    <div>
+      <span class="meta-label">Jenis soal</span>
+      <strong>{{ result.question_type|replace("_", " ") }}</strong>
+    </div>
+  </div>
+
+  {% if question %}
+    <h2>Soal</h2>
+    <p class="question-box">{{ question }}</p>
+  {% endif %}
+
+  <h2>Pembahasan AI</h2>
+  <div class="ai-response markdown-source">{{ result.answer }}</div>
+
+  {% if result.context_used %}
+    <details class="context-box">
+      <summary>Konteks tambahan yang dipakai</summary>
+      <pre>{{ result.context_used }}</pre>
+    </details>
+  {% endif %}
+
+  <div class="actions">
+    <a class="button secondary" href="{{ url_for('index') }}">Soal baru</a>
+    <a class="button" href="{{ url_for('practice') }}">Buka latihan</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>x90d Demo Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='corechiperagent-logo.png') }}" alt="Logo CoreChiperAgent">
+        <span>x90d Demo Agent</span>
+      </a>
+      <div class="nav-links">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('chat') }}">Chat</a>
+        {% if is_admin %}
+          <a href="{{ url_for('training') }}">Training</a>
+        {% endif %}
+        {% if current_user %}
+          <span class="nav-user">{{ display_name }}</span>
+          <form class="nav-logout-form" action="{{ url_for('logout') }}" method="post">
+            <button type="submit">Logout</button>
+          </form>
+        {% else %}
+          <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="messages">
+          {% for category, message in messages %}
+            <div class="message {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

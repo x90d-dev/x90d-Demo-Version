@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="panel intro">
+  <div>
+    <p class="eyebrow">x90d Demo Agent</p>
+    <h1>Halo, saya x90d Demo Agent</h1>
+    <p class="lead">Demo Version</p>
+    <div class="actions top-actions">
+      <a class="button" href="{{ url_for('chat') }}">Buka Chat Mode</a>
+      <a class="button secondary" href="{{ url_for('practice') }}">Latihan</a>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <form action="{{ url_for('solve') }}" method="post" class="solve-form">
+    <label for="subject">Mata pelajaran</label>
+    <select id="subject" name="subject">
+      {% for value, label in subject_options %}
+        <option value="{{ value }}">{{ label }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="question">Soal</label>
+    <textarea id="question" name="question" rows="10" maxlength="4000" placeholder="Contoh: Selesaikan persamaan 2x + 3 = 11."></textarea>
+    <div class="form-footer">
+      <span id="charCount">0 / 4000</span>
+      <button type="submit">Jawab soal</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

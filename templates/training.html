@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="panel">
+  <div>
+    <p class="eyebrow">Training</p>
+    <h1>Pusat latihan ringan</h1>
+    <p class="lead">Ringkasan bank soal dan level progress untuk membantu memilih latihan berikutnya.</p>
+  </div>
+  <a class="button" href="{{ url_for('practice') }}">Mulai latihan</a>
+</section>
+
+<section class="card training-pack-card">
+  <div>
+    <p class="eyebrow">Paket memori</p>
+    <h2>Training By CoreChiperAgent</h2>
+    <p class="lead">Pasang {{ brutal_training_count }} aturan lintas pelajaran untuk matematika advanced, fisika, kimia, English/TOEFL, sejarah, pendidikan, coding, anti-ngarang, validasi soal menjebak, dan gaya chat yang lebih santai.</p>
+  </div>
+  <form action="{{ url_for('training_seed_brutal') }}" method="post">
+    <button type="submit">Install  Training</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Ajari CoreChiperAgent</h2>
+  <p class="lead">Tambahkan koreksi agar jawaban berikutnya lebih hati-hati saat menemukan kata kunci yang mirip, termasuk standar coding Developer Mode.</p>
+  <form action="{{ url_for('training_note') }}" method="post" class="learning-form">
+    <label for="subject">Subject</label>
+    <select id="subject" name="subject">
+      {% for value, label in subject_options %}
+        <option value="{{ value }}">{{ label }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="trigger_text">Kapan koreksi ini dipakai?</label>
+    <input id="trigger_text" type="text" name="trigger_text" maxlength="300" placeholder="Contoh coding: rename file otomatis, aplikasi Python, Flask SQLite">
+
+    <label for="correction">Koreksi / aturan yang harus diingat</label>
+    <textarea id="correction" name="correction" rows="4" maxlength="1000" placeholder="Contoh coding: Untuk tool rename file, wajib ada dry-run, log, undo, collision handling, argparse, dan pytest."></textarea>
+
+    <button type="submit">Simpan memori koreksi</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Memori koreksi terbaru</h2>
+  <div class="compact-list">
+    {% for note in learning_notes %}
+      <article>
+        <span>{{ note.created_at }} - {{ note.subject|replace("_", " ")|title }}</span>
+        <p><strong>Trigger:</strong> {{ note.trigger_text }}</p>
+        <p><strong>Koreksi:</strong> {{ note.correction }}</p>
+      </article>
+    {% else %}
+      <p>Belum ada memori koreksi. Tambahkan satu aturan kecil untuk mulai melatih jawaban.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="card">
+  <h2>Bank soal</h2>
+  <p>Total soal: <strong>{{ total_questions }}</strong></p>
+  <div class="stat-grid">
+    {% for subject, count in subject_counts.items() %}
+      <div class="stat-card">
+        <span>{{ subject|replace("_", " ")|title }}</span>
+        <strong>{{ count }}</strong>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="card">
+  <h2>Rekomendasi latihan</h2>
+  {% if progress_rows %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Topik</th>
+            <th>Level</th>
+            <th>Kelemahan</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in progress_rows %}
+            <tr>
+              <td>{{ row.subject|replace("_", " ")|title }}</td>
+              <td>{{ row.topic|title }}</td>
+              <td>{{ row.level }}</td>
+              <td>{{ row.weakness or "Lanjutkan latihan bertahap" }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p>Belum ada progress. Kerjakan beberapa soal di halaman Latihan untuk memunculkan rekomendasi.</p>
+  {% endif %}
+</section>
+{% endblock %}

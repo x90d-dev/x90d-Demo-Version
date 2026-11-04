@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="panel">
+  <div>
+    <p class="eyebrow">Riwayat belajar</p>
+    <h1>Riwayat dan progress</h1>
+    <p class="lead">Pantau hasil latihan, level topik, dan kelemahan yang perlu diperbaiki.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Progress</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Topik</th>
+          <th>Total</th>
+          <th>Benar</th>
+          <th>Salah</th>
+          <th>Level</th>
+          <th>Kelemahan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in progress_rows %}
+          <tr>
+            <td>{{ row.subject|replace("_", " ")|title }}</td>
+            <td>{{ row.topic|title }}</td>
+            <td>{{ row.total_questions }}</td>
+            <td>{{ row.correct_count }}</td>
+            <td>{{ row.wrong_count }}</td>
+            <td>{{ row.level }}</td>
+            <td>{{ row.weakness or "-" }}</td>
+          </tr>
+        {% else %}
+          <tr><td colspan="7">Belum ada progress.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Riwayat latihan</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Waktu</th>
+          <th>Subject</th>
+          <th>Topik</th>
+          <th>Jawaban</th>
+          <th>Kunci</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in history %}
+          <tr>
+            <td>{{ row.created_at }}</td>
+            <td>{{ row.subject|replace("_", " ")|title }}</td>
+            <td>{{ row.topic|title }}</td>
+            <td>{{ row.user_answer or "-" }}</td>
+            <td>{{ row.correct_answer }}</td>
+            <td>{{ "Benar" if row.is_correct else "Salah" }}</td>
+          </tr>
+        {% else %}
+          <tr><td colspan="6">Belum ada riwayat latihan.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

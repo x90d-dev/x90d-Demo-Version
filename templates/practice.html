@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="panel">
+  <div>
+    <p class="eyebrow">Latihan adaptif</p>
+    <h1>Latihan cepat</h1>
+    <p class="lead">Kerjakan soal singkat, cek jawaban, lalu naikkan level secara bertahap.</p>
+  </div>
+  <form class="filter-form" method="get" action="{{ url_for('practice') }}">
+    <label for="subject">Filter</label>
+    <select id="subject" name="subject" onchange="this.form.submit()">
+      <option value="all" {% if subject_filter == "all" %}selected{% endif %}>Semua</option>
+      {% for value, label in subject_options %}
+        <option value="{{ value }}" {% if subject_filter == value %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+  </form>
+</section>
+
+{% if checked_result %}
+  <section class="card feedback-card {{ 'correct' if checked_result.is_correct else 'wrong' }}">
+    <h2>Hasil pengecekan</h2>
+    <p>{{ checked_result.feedback }}</p>
+    <p><strong>Jawabanmu:</strong> {{ checked_answer or "-" }}</p>
+    <p><strong>Kunci:</strong> {{ correct_answer }}</p>
+    {% if progress %}
+      <p><strong>Level topik sekarang:</strong> {{ progress.level }}</p>
+    {% endif %}
+  </section>
+{% endif %}
+
+<div class="practice-list">
+  {% for item in questions %}
+    <article class="card practice-card">
+      <div class="card-head">
+        <span>{{ item.subject|replace("_", " ")|title }}</span>
+        <span>Level {{ item.level }}</span>
+      </div>
+      <h2>{{ item.topic|title }}</h2>
+      <p class="question-box">{{ item.question }}</p>
+
+      <form action="{{ url_for('practice_check') }}" method="post" class="answer-form">
+        <input type="hidden" name="subject" value="{{ item.subject }}">
+        <input type="hidden" name="topic" value="{{ item.topic }}">
+        <input type="hidden" name="question" value="{{ item.question }}">
+        <input type="hidden" name="correct_answer" value="{{ item.answer }}">
+        <input type="hidden" name="question_type" value="{{ item.question_type }}">
+        <input type="hidden" name="level" value="{{ item.level }}">
+
+        {% if item.choices %}
+          <div class="choices">
+            {% for key, choice in item.choices.items() %}
+              <label>
+                <input type="radio" name="user_answer" value="{{ key }}">
+                <span>{{ key }}. {{ choice }}</span>
+              </label>
+            {% endfor %}
+          </div>
+        {% else %}
+          <label for="answer-{{ loop.index }}">Jawaban</label>
+          <input id="answer-{{ loop.index }}" type="text" name="user_answer" placeholder="Tulis jawaban ringkas">
+        {% endif %}
+
+        <button type="submit">Cek jawaban</button>
+      </form>
+    </article>
+  {% else %}
+    <section class="card">
+      <p>Belum ada soal untuk filter ini.</p>
+    </section>
+  {% endfor %}
+</div>
+{% endblock %}

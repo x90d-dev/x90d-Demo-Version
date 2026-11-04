@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block body_class %}chat-page{% endblock %}
+
+{% block content %}
+<section class="chat-app">
+  <button class="sidebar-open-button" id="sidebarOpen" type="button" aria-label="Buka sidebar">
+    <img src="{{ url_for('static', filename='corechiperagent-logo.png') }}" alt="Buka sidebar">
+  </button>
+  <aside class="chat-sidebar">
+    <button class="sidebar-close-button" id="sidebarClose" type="button" aria-label="Tutup sidebar">&times;</button>
+    <div class="sidebar-head">
+      <img class="agent-logo" src="{{ url_for('static', filename='corechiperagent-logo.png') }}" alt="Logo CoreChiperAgent">
+      <div>
+        <strong>x90d Demo Version</strong>
+        <span>Demo Version</span>
+      </div>
+    </div>
+
+    <form action="{{ url_for('chat_clear') }}" method="post">
+      <button class="new-chat-button" type="submit">+ Chat baru</button>
+    </form>
+
+    {% if current_pdf %}
+      <div class="sidebar-section active-pdf">
+        <span class="sidebar-title">PDF aktif</span>
+        <p class="sidebar-note">{{ current_pdf.filename }} - {{ current_pdf.page_count }} halaman</p>
+      </div>
+    {% endif %}
+
+    <div class="sidebar-section chat-history-list">
+      <span class="sidebar-title">Riwayat chat</span>
+      {% for thread in chat_threads %}
+        <div class="history-row {% if current_thread_id == thread.id %}active{% endif %}">
+          <a class="history-item" href="{{ url_for('chat_thread', thread_id=thread.id) }}">
+            <span>{{ thread.title[:52] }}</span>
+            <small>{{ thread.message_count }} pesan</small>
+          </a>
+          <form action="{{ url_for('chat_thread_delete', thread_id=thread.id) }}" method="post">
+            <button class="history-delete" type="submit" aria-label="Hapus riwayat {{ thread.title }}">&times;</button>
+          </form>
+        </div>
+      {% else %}
+        <p class="sidebar-note">Belum ada riwayat chat.</p>
+      {% endfor %}
+    </div>
+
+  </aside>
+
+  <section class="chat-main">
+    <header class="chat-main-head">
+      <div class="main-status-pill">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Lets Start</span>
+      </div>
+      <div class="header-badges" aria-label="Kemampuan CoreChiperAgent">
+        <span>Deep Reasoning Active</span>
+        <span>{{ agent_profile_labels.get(selected_agent_profile, "Normal") }}</span>
+        <button class="theme-toggle" id="themeToggle" type="button">Tema</button>
+      </div>
+    </header>
+
+    <div class="chat-stream" id="chatStream">
+      {% for item in messages %}
+        <article class="message-row user-row">
+          <div class="avatar user-avatar">{{ display_initial }}</div>
+          <div class="message-content">
+            <span class="chat-meta">{{ display_name }} - {{ mode_labels.get(item.mode, item.mode) }}</span>
+            <p>{{ item.user_message }}</p>
+          </div>
+        </article>
+        <article class="message-row ai-row">
+          <img class="avatar ai-avatar image-avatar" src="{{ url_for('static', filename='corechiperagent-logo.png') }}" alt="CoreChiperAgent">
+          <div class="message-content ai-message-content">
+            <span class="chat-meta">CoreChiperAgent</span>
+            <div class="ai-response markdown-source">{{ item.ai_response }}</div>
+            <div class="message-tools" aria-label="Aksi lanjutan">
+              <button class="mini-action quick-prompt" type="button" data-prompt="Uji lagi jawaban terakhir dengan cara berbeda dan cek semua syarat.">Uji Lagi</button>
+              <button class="mini-action quick-prompt" type="button" data-prompt="Buat training dari kesalahan jawaban terakhir. Tulis trigger dan koreksi singkatnya.">Buat Training</button>
+              <button class="mini-action quick-prompt" type="button" data-prompt="Naikkan level soal terakhir menjadi lebih sulit dan multi-syarat.">Naikkan Level</button>
+              <button class="mini-action quick-prompt" type="button" data-prompt="Cek konsistensi soal terakhir. Jika data bertentangan, jelaskan kontradiksinya.">Cek Konsistensi</button>
+              <button class="mini-action quick-prompt" type="button" data-prompt="Ringkas koreksi jawaban terakhir dalam poin pendek.">Ringkas Koreksi</button>
+            </div>
+          </div>
+        </article>
+      {% else %}
+        <div class="welcome-chat">
+          <div class="welcome-logo-wrap hero-logo-wrap">
+            <img class="agent-logo large" src="{{ url_for('static', filename='corechiperagent-logo.png') }}" alt="Logo CoreChiperAgent">
+          </div>
+          <span class="welcome-kicker"><span class="live-dot" aria-hidden="true"></span> Lets Start</span>
+          <h2>Mulai dari tugas, Coding, atau <span>ide baru.</span></h2>
+          <p>Bisa Mulai Dengan</p>
+          <div class="suggestion-grid">
+            <button class="quick-prompt action-card" type="button" data-prompt="Kerjakan soal matematika advanced ini dengan langkah teliti: ">
+              <span class="action-symbol">01</span><span>Soal advanced</span><span class="action-arrow">›</span>
+            </button>
+            <button class="quick-prompt action-card" type="button" data-prompt="Cek apakah jawaban saya benar, cari kesalahan konsep, lalu beri versi benar: ">
+              <span class="action-symbol">02</span><span>Cek jawaban</span><span class="action-arrow">›</span>
+            </button>
+            <button class="quick-prompt action-card" type="button" data-prompt="Buat rangkuman singkat dari teks berikut: ">
+              <span class="action-symbol">03</span><span>Rangkum teks</span><span class="action-arrow">›</span>
+            </button>
+            <button class="quick-prompt action-card" type="button" data-prompt="Latih saya TOEFL Structure dengan 3 soal dan pembahasan.">
+              <span class="action-symbol">AB</span><span>Latihan TOEFL</span><span class="action-arrow">›</span>
+            </button>
+            <button class="quick-prompt action-card accent-action" type="button" data-prompt="Buatkan aplikasi Python yang cukup lengkap. Sertakan struktur folder, kode per file, cara menjalankan, dan cara test: ">
+              <span class="action-symbol">&lt;/&gt;</span><span>Agent Coding</span><span class="action-arrow">›</span>
+            </button>
+            <button class="quick-prompt action-card" type="button" data-prompt="Buat rencana belajar untuk memahami topik sulit ini: ">
+              <span class="action-symbol">07</span><span>Rencana belajar</span><span class="action-arrow">›</span>
+            </button>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <form action="{{ url_for('chat') }}" method="post" class="composer" id="chatForm" enctype="multipart/form-data" data-send-url="{{ url_for('chat_send') }}" data-logo-url="{{ url_for('static', filename='corechiperagent-logo.png') }}" data-user-name="{{ display_name }}" data-user-initial="{{ display_initial }}">
+      <input type="hidden" id="reasoning_level" name="reasoning_level" value="{{ selected_reasoning_level }}">
+      <div class="composer-input-row">
+        <button class="composer-plus" id="composerPlus" type="button" aria-label="Buka opsi chat" aria-expanded="false">+</button>
+        <textarea id="message" name="message" rows="1" maxlength="4000" placeholder="Tanya apa saja..."></textarea>
+      </div>
+      <div class="composer-menu" id="composerMenu" aria-label="Opsi chat">
+        <div class="composer-menu-grid">
+          <label>
+            <span>Mode</span>
+            <select id="mode" name="mode">
+              {% for value, label in mode_options %}
+                <option value="{{ value }}" {% if selected_mode == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+          <label>
+            <span>Cara kerja</span>
+            <select id="agent_profile" name="agent_profile">
+              {% for value, label in agent_profile_options %}
+                <option value="{{ value }}" {% if selected_agent_profile == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+        </div>
+        <div class="composer-menu-actions">
+          <label class="file-button compact-file-button" for="attachment">Upload file</label>
+          <input id="attachment" name="attachment" type="file" accept=".pdf,.txt,.md,.csv,.json,.py,.html,.css,.js,.log,.png,.jpg,.jpeg,.webp">
+          <label class="web-toggle compact-web-toggle">
+            <input type="checkbox" name="web_search" value="on">
+            <span>Web search</span>
+          </label>
+        </div>
+        <span id="attachmentName"></span>
+      </div>
+      <div class="composer-actions">
+        <span id="chatCharCount">0 / 4000</span>
+        <button type="submit" aria-label="Kirim pesan">Kirim</button>
+      </div>
+    </form>
+  </section>
+</section>
+{% endblock %}

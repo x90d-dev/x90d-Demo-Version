@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block body_class %}auth-page{% endblock %}
+
+{% block content %}
+<section class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <img src="{{ url_for('static', filename='corechiperagent-logo.png') }}" alt="Logo CoreChiperAgent">
+      <div>
+        <h1>Login</h1>
+        <p>Masuk untuk membuka akses pribadi.</p>
+      </div>
+    </div>
+
+    <form method="post" class="auth-form">
+      <label for="login">Username atau email</label>
+      <input id="login" name="login" type="text" placeholder="Masukkan username atau email" autocomplete="username" required>
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Masukkan password" autocomplete="current-password" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="social-login-grid" aria-label="Pilihan login lain">
+      <a href="{{ url_for('social_login', provider='google') }}">Google</a>
+      <a href="{{ url_for('social_login', provider='email') }}">Email</a>
+      <a href="{{ url_for('social_login', provider='github') }}">GitHub</a>
+    </div>
+
+    <p class="auth-footer">Belum punya akun biasa? <a href="{{ url_for('register') }}">Daftar</a></p>
+  </div>
+</section>
+{% endblock %}
